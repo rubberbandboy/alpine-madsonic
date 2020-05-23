@@ -13,7 +13,7 @@ ENV TGZ_NAME ${PKG_DATE}_${PKG_NAME}-${PKG_VER}.${PKG_BUILD}-standalone.tar.gz
 
 WORKDIR /madsonic
 
-RUN echo "@commlatest https://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories \
+RUN echo "@commlatest https://uk.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories \
  && apk -U add \
     ffmpeg \
     openjdk8-jre@commlatest \
