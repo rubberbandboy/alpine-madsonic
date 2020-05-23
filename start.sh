@@ -1,6 +1,7 @@
 #!/bin/sh
 
 addgroup -g ${GID} madsonic && adduser -h /madsonic -s /bin/sh -D -G madsonic -u ${UID} madsonic
+apk update && apk upgrade && apk add bash
 
 mkdir -p /config/transcode
 
