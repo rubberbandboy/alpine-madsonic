@@ -1,4 +1,4 @@
-FROM alpine:edge
+FROM alpine:latest
 MAINTAINER madsonic <support@madsonic.org>
 
 ENV GID=991 UID=991
@@ -13,11 +13,11 @@ ENV TGZ_NAME ${PKG_DATE}_${PKG_NAME}-${PKG_VER}.${PKG_BUILD}-standalone.tar.gz
 
 WORKDIR /madsonic
 
-RUN echo "@commuedge https://nl.alpinelinux.org/alpine/edge/community" >> /etc/apk/repositories \
+RUN echo "@commlatest https://dl-cdn.alpinelinux.org/alpine/latest-stable/community" >> /etc/apk/repositories \
  && apk -U add \
     ffmpeg \
-    openjdk8-jre@commuedge \
-    tini@commuedge \
+    openjdk8-jre@commlatest \
+    tini@commlatest \
  && wget -qO- http://madsonic.org/download/${PKG_VER}/${TGZ_NAME} | tar zxf - \
  && rm -f /var/cache/apk/*
 
